@@ -220,8 +220,8 @@ Enemy.prototype.isCollision = function (bullet) {
 };
 
 var EnemyManager = function () {
-    EnemyManager.prototype.HORIZONTAL_COUNT = 2;
-    EnemyManager.prototype.VERTICAL_COUNT = 2;
+    EnemyManager.prototype.HORIZONTAL_COUNT = 8;
+    EnemyManager.prototype.VERTICAL_COUNT = 4;
     EnemyManager.prototype.COUNT = 0;
 
     this.enemyList = [];
@@ -270,12 +270,12 @@ EnemyManager.prototype.draw = function (context) {
             }
     });
 
-    var GameClear = 
-        this.enemyList.some(function(){
-            if (this.SCORE == 65){
-                return true;
-            }
-        })
+    // var GameClear = 
+    //     this.enemyList.some(function(){
+    //         if (this.SCORE == ){
+    //             return true;
+    //         }
+    //     })
 
     if(this.COUNT == 15){
 
@@ -290,12 +290,12 @@ EnemyManager.prototype.draw = function (context) {
                 context.font = "30px 'ＭＳ ゴシック'";
                 context.fillText("Game Over", 230, 200, WIDTH);
             }        
-            if (GameClear){
-                enemy.image = null;
-                context.fillStyle = "blue";
-                context.font = "30px 'ＭＳ ゴシック'";
-                context.fillText("Game Clear", 230, 200, WIDTH);
-            }
+            // if (GameClear){
+            //     enemy.image = null;
+            //     context.fillStyle = "blue";
+            //     context.font = "30px 'ＭＳ ゴシック'";
+            //     context.fillText("Game Clear", 230, 200, WIDTH);
+            // }
             
             enemy.move(enemy.SPEED_X,0);
             enemy.draw(context);
